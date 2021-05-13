@@ -1,3 +1,6 @@
+import { ToastContainer } from 'react-toastify'
+import { Toast } from 'react-toastify/dist/components'
+
 const Layout = ({ children }) => {
   return (
     <div>
@@ -19,6 +22,7 @@ const Layout = ({ children }) => {
         </div>
       </nav>
       <div className="container">{children}</div>
+    <ToastContainer />
     </div>
   )
 }
