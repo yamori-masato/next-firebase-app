@@ -1,3 +1,5 @@
+import '../lib/firebase'
+import '../lib/authentication'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
