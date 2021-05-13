@@ -46,7 +46,7 @@ const UserShow = () => {
 
     await firebase.firestore().collection('questions').add({
       senderUid: firebase.auth().currentUser.uid,
-      receivedUid: user.uid,
+      receiverUid: user.uid,
       body,
       isReplied: false,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
