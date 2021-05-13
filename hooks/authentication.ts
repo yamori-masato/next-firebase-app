@@ -32,7 +32,7 @@ export function useAuthentication() {
           name: '',
         }
         setUser(loginUser)
-        createUserIfNotFount(loginUser)
+        createUserIfNotFound(loginUser)
       } else {
         // User is signed out.
         setUser(null)
@@ -43,7 +43,7 @@ export function useAuthentication() {
   return { user }
 }
 
-async function createUserIfNotFount(user: User) {
+async function createUserIfNotFound(user: User) {
   const userRef = firebase.firestore().collection('user').doc(user.uid)
   const doc = await userRef.get()
   if (doc.exists) {
