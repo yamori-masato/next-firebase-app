@@ -7,6 +7,7 @@ import Layout from '../../components/Layout'
 import Card from '../../components/Card'
 import dayjs from 'dayjs'
 import InfiniteScroll from 'react-infinite-scroller'
+import Link from 'next/link'
 
 function createBaseQuery(user: User) {
   return firebase
@@ -72,12 +73,14 @@ const QuestionsReceived = () => {
             loader={<div key={0}>Loading...</div>}
           >
             {questions.map((question) => (
-              <div key={question.id}>
-                <Card
-                  text={question.body}
-                  date={dayjs(question.createdAt.toDate()).format('YYYY/MM/DD HH:mm')}
-                />
-              </div>
+              <Link href={`/questions/${question.id}`} key={question.id}>
+                <a>
+                  <Card
+                    text={question.body}
+                    date={dayjs(question.createdAt.toDate()).format('YYYY/MM/DD HH:mm')}
+                  />
+                </a>
+              </Link>
             ))}
           </InfiniteScroll>
         </div>
