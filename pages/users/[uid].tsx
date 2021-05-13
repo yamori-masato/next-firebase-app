@@ -9,6 +9,7 @@ type Query = {
   uid: string
 }
 
+// uidに対応するユーザの質問ページ
 const UserShow = () => {
   const [user, setUser] = useState<User | null>(null)
   const router = useRouter()
