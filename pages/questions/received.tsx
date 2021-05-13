@@ -20,15 +20,7 @@ export default function QuestionsReceived() {
         .collection('questions')
         .where('receiverUid', '==', user.uid)
         .get()
-      
-      console.log(
-        (await firebase
-          .firestore()
-          .collection('questions')
-          .where('id', '!=', '1')
-          .get())
-        .docs.map(v => v)
-      )
+
       if (snapshot.empty) {
         return
       }
@@ -40,11 +32,8 @@ export default function QuestionsReceived() {
       })
       setQuestions(gotQuestions)
     }
-
     loadQuestions()
   }, [user])
-  // console.log(user)
-  console.log(questions)
 
   return (
     <Layout>
