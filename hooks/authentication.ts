@@ -8,7 +8,9 @@ const userState = atom<User>({
   default: null,
 })
 
-
+// 匿名ログイン済みならログインユーザを返す
+// 未ログインならログインし、ログインユーザを返す
+// 未登録(firestoreに登録されていない(indexedDBに情報がない))なら、新規匿名登録して、ログインユーザを返す
 export function useAuthentication() {
   const [user, setUser] = useRecoilState(userState)
 
