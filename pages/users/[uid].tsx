@@ -44,7 +44,7 @@ const UserShow = () => {
     setIsSending(true)
     e.preventDefault()
 
-    await firebase.firestore().collection('questionis').add({
+    await firebase.firestore().collection('questions').add({
       senderUid: firebase.auth().currentUser.uid,
       receivedUid: user.uid,
       body,
