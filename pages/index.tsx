@@ -1,7 +1,5 @@
 
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
-import { useAuthentication } from '../hooks/authentication'
 
 export default function Home() {
   return (
