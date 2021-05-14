@@ -46,7 +46,7 @@ export function useAuthentication() {
 }
 
 async function createUserIfNotFound(user: User) {
-  const userRef = firebase.firestore().collection('user').doc(user.uid)
+  const userRef = firebase.firestore().collection('users').doc(user.uid)
   const doc = await userRef.get()
   if (doc.exists) {
     return
