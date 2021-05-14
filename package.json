@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.0.0-beta3",
+    "canvas": "^2.7.0",
     "dayjs": "^1.10.4",
     "firebase": "^8.6.1",
     "firebase-admin": "^9.8.0",
