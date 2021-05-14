@@ -25,7 +25,7 @@ const UserShow = () => {
     async function loadUser() {
       const doc = await firebase
         .firestore()
-        .collection('user')
+        .collection('users')
         .doc(query.uid)
         .get()
       
